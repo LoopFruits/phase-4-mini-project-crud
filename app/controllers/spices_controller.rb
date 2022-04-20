@@ -27,9 +27,10 @@ class SpicesController < ApplicationController
   #DELETE spices/:id
   def destroy
     #finding the matching id 
-    spice = find_spice
+    spice = Spice.find(params[:id])
     #deleting the spice 
     spice.destroy
+    head :no_content
   end
 
   #refactoring params  
